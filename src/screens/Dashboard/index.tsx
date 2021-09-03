@@ -21,21 +21,24 @@ import {
 export function Dashboard() {
   const data = [
     {
+      type: 'positive',
       title: "Desenvolvimento de Site",
       amount: "R$ 12.000,00",
       category: { name: 'Vendas', icon: 'dollar-sign' },
       date: "13/04/2020"
     },
     {
-      title: "Desenvolvimento de Site",
-      amount: "R$ 12.000,00",
-      category: { name: 'Vendas', icon: 'dollar-sign' },
+      type: 'negative',
+      title: "Hamburguer",
+      amount: "R$ 24,00",
+      category: { name: 'Alimentação', icon: 'coffee' },
       date: "13/04/2020"
     },
     {
-      title: "Desenvolvimento de Site",
-      amount: "R$ 12.000,00",
-      category: { name: 'Vendas', icon: 'dollar-sign' },
+      type: 'negative',
+      title: "Aluguel do apartamento",
+      amount: "R$ 1200,00",
+      category: { name: 'Casa', icon: 'shopping-bag' },
       date: "13/04/2020"
     },
   ]
