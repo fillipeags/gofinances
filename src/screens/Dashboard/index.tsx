@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { getBottomSpace } from 'react-native-iphone-x-helper'
+import React, { useState, useEffect, useCallback } from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useFocusEffect } from '@react-navigation/native'
+
 import { HighlightCard } from '../../components/HighlightCard'
 import { TransactionCard, TransactionCardProps } from '../../components/TransactionCard'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import {
   Container,
   UserWrapper,
@@ -61,7 +62,11 @@ export function Dashboard() {
 
   useEffect(() => {
     loadTransactions();
-  }, [])
+  }, []);
+
+  useFocusEffect(useCallback(() => {
+    loadTransactions();
+  }, []));
 
   return (
     <Container>
