@@ -10,7 +10,7 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import { SignIn } from './src/screens/SignIn'
 
-import { AuthContext } from './src/AuthContext'
+import { AuthProvider } from './src/hooks/auth'
 
 import {
   useFonts,
@@ -39,9 +39,9 @@ export default function App() {
       <NavigationContainer>
         <StatusBar barStyle="light-content" />
         {/* <AppRoutes /> */}
-        <AuthContext.Provider value={[]}>
+        <AuthProvider>
           <SignIn />
-        </AuthContext.Provider>
+        </AuthProvider>
       </NavigationContainer>
     </ThemeProvider>
   );
